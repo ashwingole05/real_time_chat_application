@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 public class ChatController {
 
+    @GetMapping("/")
+    public String home() {
+        return "redirect:/chat";
+    }
+
     @MessageMapping("/sendMessage")
     @SendTo("/topic/message")
     public ChatMessage sendMessage(ChatMessage message){
